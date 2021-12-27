@@ -1,0 +1,6 @@
+module Pods_keepaccount_keepaccountTests {
+  umbrella header "Pods-keepaccount-keepaccountTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
