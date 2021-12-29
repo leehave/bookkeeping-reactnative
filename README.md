@@ -34,3 +34,10 @@
     "redux-thunk": "^2.4.1"
   },
 ```
+
+### 预览
+![首页](screenshots/Simulator1.png)
+![图表](screenshots/Simulator2.png)
+![类型](screenshots/Simulator3.png)
+![发现](screenshots/Simulator4.png)
+![详情](screenshots/Simulator5.png)
