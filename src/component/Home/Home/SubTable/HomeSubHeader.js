@@ -6,7 +6,7 @@ export default class HomeSubHeader extends Component {
   render() {
     const {model} = this.props;
     const year = DateExtension.supplement(model.data[0].year);
-    const month = DateExtension.supplement(model.data[0].month) - 1;
+    const month = DateExtension.supplement(model.data[0].month);
     const day = DateExtension.supplement(model.data[0].day);
     const dateStr = month + '月' + day + '日';
     const date = new Date(year, month, day);

@@ -12,6 +12,7 @@ const scrollH =
 export default class Home extends Component {
   constructor(props) {
     const date = new Date();
+    console.log(date, 'currentYear')
     super(props);
     this.state = {
       year: date.getFullYear(),
@@ -44,6 +45,7 @@ export default class Home extends Component {
 
   getData = async () => {
     var models = await DeviceStorage.getBook(this.state.year, this.state.month);
+    console.log(JSON.stringify(models), "home getDate")
     this.setState({
       models2: models,
     });

@@ -127,18 +127,25 @@ const AuthStackScreen = () => {
 };
 const NormalStackScreen = () => {
   return (
-    <NormalStack.Navigator screenOptions={{ headerShown: false }}>
+    <NormalStack.Navigator
+      screenOptions={{
+        headerShown: false,
+        headerStyle: {backgroundColor: "#ffd944"},
+        cardOverlayEnabled: true
+      }}>
       <NormalStack.Screen
         name="AppTabsScreen"
+        screenOptions={{headerStyle: {backgroundColor: "#ffd944"}}}
         component={AppTabsScreen}></NormalStack.Screen>
       <NormalStack.Screen
         name="Book"
         screenOptions={({navigation}) => ({
-          'mode': 'modal'
+          mode: "modal",
         })}
         component={Book}></NormalStack.Screen>
       <NormalStack.Screen
         name="BookDetail"
+        screenOptions={{headerStyle: {backgroundColor: "#ffd944"}}}
         component={BookDetail}></NormalStack.Screen>
       <NormalStack.Screen name="Badge" component={Badge}></NormalStack.Screen>
       <NormalStack.Screen
@@ -166,7 +173,9 @@ const NormalStackScreen = () => {
 }
 const defaultNavigationOptions = index => ({
   tabBarLabel: index === 2 ? '' : navigationTitle(index),
+  mode: index === 2 ? "modal" : '',
   headerShown: false,
+  screenOptions: {headerStyle: {backgroundColor: "#ffd944"}},
   tabBarIcon: ({tintColor, focused}) => {
     images = navigationImage(index)
     title = navigationTitle(index)

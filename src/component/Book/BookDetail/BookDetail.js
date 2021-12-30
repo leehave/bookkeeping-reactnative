@@ -19,7 +19,6 @@ export default class BookDetail extends Component {
         this.state = {
             model: null
         };
-        this.table = React.createRef()
     }
 
     componentDidMount = () => {
@@ -34,8 +33,7 @@ export default class BookDetail extends Component {
     }
 
     getData = (model)=>{
-        // this.table.setModel(this.props.route.params.model)
-        // console.log(this.table,'tabnl')
+        this.refs.table.setModel(this.props.route.params.model)
         this.setState({
             model: model
         })
@@ -92,22 +90,23 @@ export default class BookDetail extends Component {
     render() {
         const { params } = this.props.route
         return (
-            <BaseContainer 
-                navigation={this.props.navigation} 
-                hasLeft={false}
-                hasTitle={false} 
-                hasRight={true}
-                onBackPress={this._navigateBack}
-                hasContentRight={this._hasContentRight}
-            >
-                <BookHeader model={this.state.model ? this.state.model : params.model}/>
-                <BookTable ref={this.table}/>
-                <BookBottom 
-                    onEditPress={this._onEditPress} 
-                    onRemovePress={this._onRemovePress}
-                />
-            </BaseContainer>
-        );
+          <BaseContainer
+            navigation={this.props.navigation}
+            hasLeft={false}
+            hasTitle={false}
+            hasRight={true}
+            onBackPress={this._navigateBack}
+            hasContentRight={this._hasContentRight}>
+            <BookHeader
+              model={this.state.model ? this.state.model : params.model}
+            />
+            <BookTable ref="table" />
+            <BookBottom
+              onEditPress={this._onEditPress}
+              onRemovePress={this._onRemovePress}
+            />
+          </BaseContainer>
+        )
     }
 }
 

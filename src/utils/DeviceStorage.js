@@ -326,13 +326,15 @@ export default class DeviceStorage {
       }
       return true;
     });
-
+    console.log(JSON.stringify(bookArr), "getBook bookArr")
     // 统计数据
     var dictm = {};
     for (var i = 0; i < bookArr.length; i++) {
       var model = bookArr[i];
       var date = new Date(model.year, model.month, model.day);
+      console.log(JSON.stringify(date), "getBook bookArr for in")
       var dateStr = DateExtension.dateToStr(date);
+      console.log(dateStr, "getBook bookArr dateStr")
       // 初始化
       if (Object.keys(dictm).indexOf(dateStr) == -1) {
         var submodel = {};
